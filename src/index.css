@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: 'Satoshi', 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+    background: #0a0a0b;
+    color: #f5f5f3;
+  }
+
+  /* Subtle grain overlay for editorial texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.025;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    background: #5eead4;
+    color: #0a0a0b;
+  }
+}
+
+@layer components {
+  /* Dark editorial glass — subtle, never showy */
+  .glass {
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Hairline rule used for section separations — architectural, not organic */
+  .hairline {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0.08) 80%,
+      transparent 100%
+    );
+  }
+
+  /* Mono caption style — used for technical labels, metric units, tags */
+  .mono-caption {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a3a39d;
+  }
+}
