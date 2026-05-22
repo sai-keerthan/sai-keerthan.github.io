@@ -161,4 +161,32 @@ export const projects = [
       },
     ],
   },
+
+  {
+    id: 'hsm-compatibility-bridge',
+    index: '06',
+    year: '2024',
+    org: 'TCS',
+    title: 'HSM Compatibility Bridge',
+    oneLine:
+      'Decomposing the HSM trust model to unblock AES-GCM adoption without hardware replacement.',
+    metrics: [
+      'Hundreds of thousands of settlement transactions daily',
+      'Zero HSM replacement \u00b7 zero operational disruption',
+      'Validated across dev, UAT, pre-prod, production',
+    ],
+    tags: ['HSM Integration', 'Envelope Encryption', 'PKCS#11', 'AES-GCM'],
+    earnedSecret:
+      'When an HSM can\u2019t perform a modern crypto operation, the instinct is to ask \u201chow do we replace it?\u201d That\u2019s the wrong question. In hybrid encryption, the HSM\u2019s actual job is to guard the private key \u2014 not to own every cryptographic operation. Once I decomposed the trust model, it was clear: the HSM needed to decrypt the CEK. Everything after that \u2014 payload decryption using an ephemeral CEK inside a trusted process \u2014 was never the HSM\u2019s security responsibility. The constraint didn\u2019t force a workaround; it forced a clearer reading of the architecture.',
+    star: {
+      situation:
+        'During the platform-wide authenticated-encryption migration, we hit a critical interoperability issue in one of the high-value settlement environments: the HSM deployed there did not support AES-GCM decryption. The settlement network processes hundreds of thousands of high-value transactions daily \u2014 operational disruption was not acceptable. The existing architecture used a hybrid envelope-encryption structure: a Content Encryption Key (CEK) for encrypting the payload, and a Key Encryption Key (KEK) for encrypting the CEK itself, with the KEK protected by HSM-backed asymmetric private keys via PKCS#11.',
+      task:
+        'Design a migration-compatible solution that would enable AES-GCM adoption in the settlement environment without requiring HSM replacement or disrupting live operations \u2014 balancing security modernization, HSM limitations, and operational continuity.',
+      action:
+        'I started by deeply analyzing the envelope-encryption structure and the hybrid cryptographic flow in use. The key insight came from decomposing the trust model: the HSM\u2019s actual security function was to protect the private key used for KEK-level decryption \u2014 not to perform symmetric payload decryption itself. Once I saw that boundary clearly, I designed a compatibility approach: the encrypted payload and encrypted CEK were separated; the HSM continued handling KEK-level CEK decryption through the existing PKCS#11 integration (vendor-specific library and Java authentication provider); once the CEK was safely decrypted inside the trusted application boundary, Java\u2019s native AES-GCM implementation decrypted the actual payload \u2014 outside the HSM. This preserved the existing hybrid-encryption trust model \u2014 the private key never left the HSM, the CEK existed only ephemerally inside the trusted process \u2014 while eliminating any dependency on the HSM\u2019s unsupported GCM functionality.',
+      result:
+        'The solution was validated across developer, multiple UAT, and pre-production environments before being deployed to production. The high-value settlement network now processes hundreds of thousands of transactions daily with every decryption passing through this AES-GCM compatibility bridge. AES-GCM adoption achieved for critical settlement systems \u2014 no HSM replacement, no operational disruption.',
+    },
+  },
 ]

@@ -70,7 +70,7 @@ export default function SelectedWork() {
             <span className="text-bone-300">at banking scale.</span>
           </h2>
           <p className="mt-6 max-w-2xl font-sans text-[15px] leading-relaxed text-bone-300">
-            My top 5 Work Story Cards: spanning migration engineering,
+            My top 6 Work Story Cards: spanning migration engineering,
             performance, vulnerability remediation, and post-quantum readiness
             &mdash; shipped across national-scale financial messaging
             infrastructure.
@@ -78,8 +78,7 @@ export default function SelectedWork() {
         </motion.div>
 
         {/* Uniform grid: 1 col mobile, 2 col tablet, 3 col desktop.
-            Five projects means the bottom row has 2 cards instead of 3,
-            which actually reads cleaner than a forced 5-across or 2x3 grid. */}
+            Six projects = clean 3×2 on desktop. */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.button
