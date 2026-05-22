@@ -24,7 +24,7 @@ const pillars = [
   {
     icon: GitBranch,
     title: 'Migration engineering',
-    body: 'Backward-compatible cryptographic transitions across multi-tenant production systems. HUB-routed phased rollouts. Crypto-agility design. Interoperability without disruption. The discipline that turns algorithm choices into shippable infrastructure.',
+    body: 'Backward-compatible cryptographic transitions across multi-tenant production systems. Routing-aware phased rollouts. Crypto-agility design. Interoperability without disruption. The discipline that turns algorithm choices into shippable infrastructure.',
     items: [
       'Phased rollouts',
       'Backward compatibility',

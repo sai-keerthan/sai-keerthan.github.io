@@ -58,7 +58,7 @@ export default function PersonalProject() {
                 A practical demonstration of hybrid cryptography &mdash;
                 combining classical and post-quantum algorithms in parallel.
                 Built to make crypto-agility concrete: the same migration
-                pattern I identified in the SFMS PQC benchmarking work,
+                pattern I identified in my enterprise PQC benchmarking work,
                 implemented as a working prototype.
               </p>
 

@@ -55,21 +55,22 @@ export default function About() {
           >
             <p>
               I&rsquo;m a cryptographic infrastructure engineer with ~3.5
-              years at Tata Consultancy Services, working on the SFMS
-              (Structured Financial Messaging Service) ecosystem &mdash; the
-              cryptographic backbone used by the Reserve Bank of India and
-              230+ banks for secure interbank communication.
+              years at Tata Consultancy Services, working on
+              national-scale financial messaging infrastructure &mdash; the
+              cryptographic backbone used by a financial regulator and 200+
+              member institutions for secure cross-institutional communication.
             </p>
             <p>
               My work sits at the intersection of cryptographic engineering,
               PKI infrastructure, and large-scale migration design. I&rsquo;ve
-              led the migration from Triple-DES to AES-256-GCM across the
-              entire SFMS network, modernized the SFMS Signer under Java 17
-              with a custom PKCS#11 integration layer, and driven ASN.1 / RFC
-              compliance across 60+ independent banks. I&rsquo;ve also
-              self-initiated post-quantum cryptography benchmarking against
-              SFMS-scale workloads to put the platform on a quantum-safe
-              roadmap.
+              led the migration from a legacy symmetric cipher to a modern
+              authenticated-encryption standard across an entire member
+              network, modernized a digital signing service under a major
+              Java runtime upgrade with a custom hardware-token integration
+              layer, and driven signature-standards compliance across 60+
+              independent institutions. I&rsquo;ve also self-initiated
+              post-quantum cryptography benchmarking against enterprise-scale
+              workloads to put the platform on a quantum-safe roadmap.
             </p>
             <p>
               The thread that connects all of it is the same:{' '}
@@ -77,12 +78,12 @@ export default function About() {
                 getting the question right before getting the implementation
                 right.
               </span>{' '}
-              CVEs describe vulnerability classes, not deployments. PQC isn&rsquo;t
-              an algorithm replacement problem &mdash; it&rsquo;s a PKI
-              ecosystem problem. Legacy migrations aren&rsquo;t code upgrades
-              &mdash; they&rsquo;re modernizations of hidden trust
-              assumptions. The infrastructure conclusions follow once the
-              framing is right.
+              Vulnerability reports describe vulnerability classes, not
+              deployments. PQC isn&rsquo;t an algorithm replacement problem
+              &mdash; it&rsquo;s a PKI ecosystem problem. Legacy migrations
+              aren&rsquo;t code upgrades &mdash; they&rsquo;re modernizations
+              of hidden trust assumptions. The infrastructure conclusions
+              follow once the framing is right.
             </p>
           </motion.div>
         </div>
@@ -100,7 +101,7 @@ export default function About() {
         >
           <Fact label="Experience" value="~3.5 years" />
           <Fact label="Domain" value="Banking infrastructure" />
-          <Fact label="Scale" value="230+ banks" />
+          <Fact label="Scale" value="200+ institutions" />
           <Fact label="Based in" value="Hyderabad, India" />
         </motion.div>
       </div>

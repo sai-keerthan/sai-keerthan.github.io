@@ -14,7 +14,7 @@ const awards = [
     issuer: 'Tata Consultancy Services',
     year: '2024',
     citation:
-      'For leading the migration of the SFMS cryptographic ecosystem from Triple-DES to AES-256-GCM across 238 banks with zero operational disruption.',
+      'For leading the migration of a national financial messaging platform from a legacy symmetric cipher to a modern authenticated-encryption standard across 200+ member institutions with zero operational disruption.',
   },
 ]
 

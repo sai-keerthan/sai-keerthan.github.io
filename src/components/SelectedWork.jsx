@@ -72,8 +72,8 @@ export default function SelectedWork() {
           <p className="mt-6 max-w-2xl font-sans text-[15px] leading-relaxed text-bone-300">
             My top 5 Work Story Cards: spanning migration engineering,
             performance, vulnerability remediation, and post-quantum readiness
-            &mdash; shipped across the SFMS ecosystem for the Reserve Bank of
-            India.
+            &mdash; shipped across national-scale financial messaging
+            infrastructure.
           </p>
         </motion.div>
 

@@ -132,9 +132,9 @@ export default function Hero() {
           className="mt-10 max-w-2xl font-sans text-[clamp(1.05rem,1.5vw,1.25rem)] leading-relaxed text-bone-200"
         >
           Building and modernizing the cryptographic trust layer behind
-          India&rsquo;s interbank financial messaging.{' '}
+          national-scale financial messaging infrastructure.{' '}
           <span className="text-bone-100">
-            230+ banks. Production scale. Zero downtime.
+            200+ institutions. Production scale. Zero downtime.
           </span>
         </motion.p>
 
@@ -209,7 +209,7 @@ export default function Hero() {
             <div>
               <p className="mono-caption mb-1">Currently</p>
               <p className="text-[14px] text-bone-200">
-                Cryptographic systems @ TCS &mdash; SFMS / RBI / IFTAS
+                Cryptographic systems engineering @ TCS
               </p>
             </div>
           </div>
